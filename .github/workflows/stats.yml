@@ -3,27 +3,27 @@ name: Stats
 on: 
   push:
     branches: [ main ]
-
-jobs:
+    
+jobs:  
   build:
     runs-on: ubuntu-latest
     permissions:
-          contents: write
-
+      contents: write
+          
     steps:
       - name: Checkout Repo V4
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       
       - name: Setup Python
-      - user: actions/setup-python@v5
+        user: actions/setup-python@v5
         with:
           python-version: '311'
           
       - name: Run Script
-      - run: python ./stats.py
+        run: python ./stats.py
       
       - name: Commit and Push Change
-      - uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v6
         with: 
           commit_message: Update stats
           commit_user_name: Mauricio Garay V. [Github Actions]
