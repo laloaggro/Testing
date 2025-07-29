@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
           
       - name: Run Script
-        run: python .Testing/stats.py
+        run: python ./Testing/stats.py
       
       - name: Commit and Push Change
         uses: stefanzweifel/git-auto-commit-action@v6
